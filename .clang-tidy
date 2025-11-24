@@ -1,0 +1,27 @@
+---
+# Disable all default checks (-*)
+# Enable google specific checks (google-*)
+# Enable standard bug catching (bugprone-*, clang-analyzer-*)
+# Enable performance checks (performance-*)
+# Enable general readability checks (readability-*)
+Checks: >
+  -*,
+  google-*,
+  bugprone-*,
+  clang-analyzer-*,
+  performance-*,
+  readability-*,
+
+# Treat all warnings as errors (Optional, but recommended for strict compliance)
+WarningsAsErrors: '*'
+
+# Specific check configurations
+CheckOptions:
+  # Google style allows implicit conversions for specific types, 
+  # but usually demands explicit single-argument constructors.
+  - key: google-explicit-constructor.IsWhitelist
+    value: 'false'
+
+  # Limit function size (optional, Google doesn't strictly define line count but encourages small functions)
+  - key: readability-function-size.LineThreshold
+    value: '80'
