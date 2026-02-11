@@ -11,6 +11,7 @@ Checks: >
   performance-*,
   readability-*,
   -readability-magic-numbers,
+  -google-readability-todo
 
 # Treat all warnings as errors (Optional, but recommended for strict compliance)
 WarningsAsErrors: '*'
